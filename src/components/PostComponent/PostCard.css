@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,300&family=Zen+Kurenaido&display=swap');
+.image__slider{
+    display: inline;
+}
+.swiper {
+    width: 100%;
+    height: 40%;
+    margin: 0px !important;
+    border-radius: 10px !important;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    
+    /* Center slide text vertically */
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; */
+    display: block;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+  }
+  #triangle1 
+    { 
+      width: 0;
+      height: 0;
+      border: solid 180px;
+      border-color: transparent transparent rgba(186, 162, 192, 0.486) transparent;
+      position: absolute;
+      bottom: -100px;
+          left: -30px;
+          transform: rotate(210deg);
+    } 
+    #triangle2 
+    { 
+      width: 0;
+      height: 0;
+      border: solid 180px;
+      border-color: transparent transparent rgba(166, 127, 175, 0.486) transparent;
+      position: absolute;
+      bottom: -110px;
+      left: -180px;
+      transform: rotate(140deg);
+    } 
+  .card-body{
+    background-color: #FEFFFE;
+    position: relative;
+    border-radius: 10px;
+    /* box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75); */
+    color:rgb(233, 72, 43);
+    margin:15px;
+    max-width: 400px;
+    /* background-image:linear-gradient(100deg,#8D73F5,#c5b3fd)  */
+  }
+  .card-header{
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+font-family: 'Zen Kurenaido', sans-serif;
+font-size: larger;
+font-weight: bolder;
+  }
+  .card-description{
+    color:#999898;
+    font-family: 'Zen Kurenaido', sans-serif;
+  }
+  .class-content{
+    padding: 10px 20px;
+  }
+  .card-lower-section{
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-lowest-section{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }

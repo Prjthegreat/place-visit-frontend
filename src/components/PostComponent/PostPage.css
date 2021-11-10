@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,300;1,900&family=Zen+Kurenaido&display=swap');
+.post-page-background{
+    background-color: #e5e1ec;
+    padding: 20px;
+    height: auto;
+    padding-bottom: 152px;
+   
+}
+.post-page-background h1{
+    text-align: center;
+    margin: 20px;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 40px;
+    font-stretch: ultra-expanded;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
