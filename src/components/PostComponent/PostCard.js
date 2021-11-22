@@ -1,4 +1,5 @@
 import React,{useContext,useState} from 'react'
+import DropDown from '../Dropdown/DropDown';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from '../../../node_modules/swiper/react/swiper-react';
 import 'swiper/swiper.scss'
@@ -11,6 +12,7 @@ import like from '../../images/liked.png'
 import cmnt from '../../images/chat-bubble.png'
 import save from '../../images/saved.png'
 import saved from '../../images/saved_2.png'
+import {Link} from 'react-router-dom'
 SwiperCore.use([Pagination])
 const PostCard = (props) => {
     // const [issaved,setissaved]=useState()
@@ -47,6 +49,7 @@ const PostCard = (props) => {
            
             <div className="card-body" >
                    <div className="card-slider" >
+                  
                    <div className="image__slider" >
                             {/* <ImageGallery originalHeight="20px" originalWidth="20px" showNav={false} items={imagesarray} />;        */}
                             
@@ -72,9 +75,12 @@ const PostCard = (props) => {
                                 
                                 
                                 </Swiper>
-                        
-                        
+
                             </div>
+                          {props.crud && <div style={{display:'flex',justifyContent:'flex-end'}} >
+                              <DropDown deleteposthandler={props.deleteposthandler} id={props._id}  /> 
+                              </div>}
+                            
                    </div>
                    <div id="triangle1" ></div>
                    {/* <div id="triangle2" ></div> */}
@@ -85,10 +91,10 @@ const PostCard = (props) => {
                     <div className="card-description" >
                         <p>{props.description}</p>
                     </div>
-                   
                     <div className="card-lower-section" >
-                        <span> Post by {props.creator}</span>
-                        <span> Location: {props.location}</span>
+                    <span> Post by &nbsp;<Link style={{fontSize:'11px', color:'rgb(233, 72, 43)'}} to={`/profile/user/${props.creator ? props.creator._id:null}`}>{ props.creator && props.creator.name }</Link></span>
+                       <span> Rating: {props.rating}/5 </span>
+                        <span style={{maxWidth:'100px'}} > Location: {props.location}</span>
                     </div>
                     <hr />
                     <div className="card-lowest-section" >
@@ -98,7 +104,7 @@ const PostCard = (props) => {
                     </div>
                    </div>
             </div>
-
+            
         </div>
     )
 }

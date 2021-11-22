@@ -3,16 +3,19 @@ import PostCard from './PostCard'
 import './PostPage.css'
 import {getallpostapi} from '../../apicalls/postapi'
 import { AuthContext } from '../../authcontext/AuthContext'
+import SearchBar from '../SearchBar/SearchBar'
+
 const PostPage = () => {
     const auth=useContext(AuthContext)
     const [allposts,setallposts]=useState([])
+    const [searchedcity,setsearchedcity]=useState("")
     //console.log(auth)   
     useEffect(()=>{
        if(auth.token){
         const fetchposts=async()=>{
             try{
              const postresponse= await getallpostapi(auth.token)
-             console.log(postresponse.posts)
+             console.log(postresponse)
              setallposts(postresponse.posts)
             }catch(err){
              console.log(err)
@@ -22,63 +25,46 @@ const PostPage = () => {
        }
     },[auth.token])
 
+    const search=(places)=>{
+        if(!places ||  places.length===0)
+        return []
+      const arr= places.map( place=>{
+            if(  place && place.placename && place.placename.toLowerCase().indexOf(searchedcity.toLowerCase()) >=0 )
+             return place
 
-    const dummy_posts=[
-        {
-            id:1,
-            placename:'Manali',
-            description:'A very beautifull place. A must visit Place.Capture the stunning essence of the early morning sunrise in the Californian wilderness',
-            location:'Himachal',
-            creator:'Prajwal',
-            images:[
-                {id:1,img:'https://s.abcnews.com/images/Business/jaguar-ht-jt-200217_hpMain_16x9_1600.jpg'},
-                {id:2,img:'https://www.carscoops.com/wp-content/uploads/2021/02/Jaguar-Sports-Carsa-1024x555.jpg'},
-                {id:3,img:'https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/lamborghini-huracan.jpg'}
-            ]
-        },
-        {
-            id:2,
-            placename:'Amritsar',
-            description:'A very beautifull place. A must visit Place...',
-            location:'Punjab',
-            creator:'Rohit',
-            images:[
-                {id:1,img:'https://s.abcnews.com/images/Business/jaguar-ht-jt-200217_hpMain_16x9_1600.jpg'},
-                {id:2,img:'https://www.carscoops.com/wp-content/uploads/2021/02/Jaguar-Sports-Carsa-1024x555.jpg'},
-                {id:3,img:'https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/lamborghini-huracan.jpg'}
-            ]
-        },
-        {
-            id:3,
-            placename:'Goa',
-            description:'A very beautifull place. A must visit Place...',
-            location:'Goa',
-            creator:'Siddhart',
-            images:[
-                {id:1,img:'https://s.abcnews.com/images/Business/jaguar-ht-jt-200217_hpMain_16x9_1600.jpg'},
-                {id:2,img:'https://www.carscoops.com/wp-content/uploads/2021/02/Jaguar-Sports-Carsa-1024x555.jpg'},
-                {id:3,img:'https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/lamborghini-huracan.jpg'}
-            ]
-        }
-    ]
+        } )
+
+        return arr
+    }
 
     return (
         <div className="post-page-background"  >
             <h1>All Posts</h1>
+            {/* <div className="search-bar" > */}
+                {/* <input className="search-bar" value={searchedcity} onChange={ (event)=>setsearchedcity(event.target.value) }
+                  placeholder="Search Place here...." /> */}
+                  <SearchBar searchedcity={searchedcity}  setsearchedcity={setsearchedcity} />
+            {/* </div> */}
             <div className="card-container" >
-               {allposts.map( post=>(
+               { search(allposts).length>0 && search(allposts).map( post=>{
 
-                 <PostCard 
-                  _id={post._id} 
-                  placename={post.placename}
-                  description={post.description} 
-                  location={post.location}
-                  creator={post.creator} 
-                  images={post.images}
-                  issaved={post.issaved}
-                    />
-                  
-               ) )}
+                   if(!post)
+                     return
+                   else{
+                       return (  
+                        <PostCard 
+                        _id={post._id} 
+                        placename={post.placename}
+                        description={post.description}
+                        rating={post.rating} 
+                        location={post.location}
+                        creator={post.creator} 
+                        images={post.images}
+                        issaved={post.issaved}
+                          />
+                       )
+                   }  
+               } )}
 
             </div>
 

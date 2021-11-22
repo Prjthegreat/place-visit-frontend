@@ -1,0 +1,74 @@
+.form-root {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG5vdGVib29rfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
+}
+.react-form {
+  width: 40vw;
+  border-radius: lighten(#0275d8, 20%);
+  border-radius: 10px;
+  /* background: #292F62; */
+  background-image: linear-gradient(269deg, #85a8d48a, #0260e4e7);
+  box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.75);
+  padding: 50px 30px;
+  text-align: center;
+  text-align: center;
+  font-family: 'Mulish', sans-serif;
+font-family: 'Zen Kurenaido', sans-serif;
+font-size: larger;
+font-weight: bolder;
+}
+.inputSection1 {
+  background-color: white;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 100%;
+  display: block;
+  transition: 0.3s ease all; 
+  text-align: center;
+  font-family: 'Zen Kurenaido', sans-serif;
+}
+.inputSection1::placeholder {
+  color: black;
+}
+/* .inputSection{
+  margin-bottom: 25px;
+  margin: auto;
+  margin-bottom: 25px;
+} */
+
+.btn {
+   background-color: red;
+   cursor: pointer;
+}
+.submitted{
+    color:rgb(4, 155, 4);
+}
+.image-preview-container {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+.image-item {
+  margin:10px 15px;
+}
+.form-main-body{
+  padding: 10px 0px
+}

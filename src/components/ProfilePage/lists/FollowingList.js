@@ -1,6 +1,7 @@
 import React from 'react'
 import './List.css'
 import following from  '../../../images/following.png'
+import { Link } from 'react-router-dom'
 const FollowingList = (props) => {
     return (
         <div className="main_table_container" >
@@ -13,11 +14,11 @@ const FollowingList = (props) => {
                   { props.followingList.map( (user,i)=>{
                        if(i%2){
                             return  (<tr className="table_row_1" >
-                                        <td className="single_column" > {user.name} </td>
+                                       <Link to={`/profile/user/${user._id}`}><td className="single_column" > {user.name} </td></Link>
                                     </tr>)
                        }else{
                             return  (<tr className="table_row_2" >
-                                        <td className="single_column" > {user.name} </td>
+                                         <Link to={`/profile/user/${user._id}`}><td className="single_column" > {user.name} </td></Link>
                                     </tr>)
                        }
 

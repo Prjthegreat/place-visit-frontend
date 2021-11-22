@@ -89,7 +89,7 @@
     margin-bottom: 25px;
     z-index: 12;
   }
-  input {
+  .input_tag {
     outline: none;
     border: none;
     background-color: transparent;
@@ -97,9 +97,8 @@
     border-bottom: 2px solid #EF5252;
     color: #D8D9DE;
     font-size: 18px;
-    
   }
-  input::placeholder {
+  .input_tag::placeholder {
     color: red;
   }
   
@@ -153,32 +152,43 @@
   }
   
   .firstName:focus + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .firstName:valid + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .lastName:focus + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
+    
   }
   .lastName:valid + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .emailAddress:focus + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .emailAddress:valid + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .password:focus + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .password:valid + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .userName:focus + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }
   .userName:valid + .inputLabel {
-    transform: translateY(5px);
+    transform: translateY(-55px);
+    font-size: 12px;
   }

@@ -34,7 +34,7 @@
   .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     object-fit: cover;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
@@ -48,7 +48,7 @@
       position: absolute;
       bottom: -100px;
           left: -30px;
-          transform: rotate(210deg);
+          transform: translate(50px, -290px) rotate(4deg) skew(8deg, 333deg)
     } 
     #triangle2 
     { 
@@ -89,7 +89,12 @@ font-weight: bolder;
   }
   .card-lower-section{
     display: flex;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
     justify-content: space-between;
+    align-items: center;
   }
   .card-lowest-section{
     margin-top: 15px;
